@@ -7,7 +7,7 @@ No good practices, no clean code, but just works. Let's see! Gonna use Nextjs, E
 ## Stopwatch of development
 
 - [x] 1h - Initial Setup
-- [ ] ?h - Backend functionality
+- [x] 1h - Backend basics functionalities
 - [ ] ?h - Frontend functionality
 - [ ] ?h - Auth Frontend / backend
 
