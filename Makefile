@@ -4,7 +4,7 @@ build:
 	docker compose build
 
 run:
-	docker compose up -d
+	docker compose up -d --remove-orphans
 	docker exec -it back npx prisma migrate dev --name init
 	# docker exec -it db psql -U postgres
 

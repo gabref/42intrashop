@@ -10,6 +10,7 @@ No good practices, no clean code, but just works. Let's see! Gonna use Nextjs, E
 - [x] 1h - Backend basics functionalities
 - [x] 2h - Frontend basic functionality
 - [x] 1h - First deploy
+- [x] 1h - Add nginx
 - [ ] ?h - Auth Frontend / backend
 
 ## Resources
