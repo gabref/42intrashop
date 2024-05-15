@@ -8,7 +8,8 @@ No good practices, no clean code, but just works. Let's see! Gonna use Nextjs, E
 
 - [x] 1h - Initial Setup
 - [x] 1h - Backend basics functionalities
-- [ ] ?h - Frontend functionality
+- [x] 2h - Frontend basic functionality
+- [x] 1h - First deploy
 - [ ] ?h - Auth Frontend / backend
 
 ## Resources
