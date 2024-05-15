@@ -3,6 +3,15 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient();
 
+export async function getItems(_req: Request, res: Response) {
+	try {
+		const items = await prisma.item.findMany();
+		res.status(200).json(items);
+	} catch (error) {
+		res.status(400).json({ error });
+	}
+}
+
 export async function addItem(req: Request, res: Response) {
 	const { name, description } = req.body;
 	try {
