@@ -17,6 +17,8 @@ model Item {
     id          Int           @id @default(autoincrement())
     name        String
     description String?
+    imageUrl    String? // Field to store the URL of a image
+    image       Bytes? // Field to store the image data
     createdAt   DateTime      @default(now())
     updatedAt   DateTime      @updatedAt
     options     ItemOption[]

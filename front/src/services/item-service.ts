@@ -8,6 +8,8 @@ export type Item = {
     id: number;
     name: string;
     description: string | null;
+	imageUrl: string | null;
+	image: Uint8Array | null;
     createdAt: Date;
     updatedAt: Date;
 };
@@ -32,8 +34,23 @@ export async function getItems() {
 	return response.data;
 }
 
-export async function addItem(item: { name: string; description?: string }) {
-	const response = await api.post<Item>('/items', item);
+export async function getItem(id: number) {
+	const response = await api.get<Item>(`/items/${id}`);
+	return response.data;
+}
+
+export async function addItem(item: { name: string; description?: string; imageUrl?: string; imageFile?: File }) {
+	const formData = new FormData();
+	formData.append('name', item.name);
+	if (item.description) formData.append('description', item.description);
+	if (item.imageUrl) formData.append('imageUrl', item.imageUrl);
+	if (item.imageFile) formData.append('image', item.imageFile);
+
+	const response = await api.post<Item>('/items', formData, {
+		headers: {
+			'Content-Type': 'multipart/form-data',
+		},
+	});
 	return response.data;
 }
 
@@ -42,8 +59,18 @@ export async function removeItem(id: number) {
 	return response.data;
 }
 
-export async function updateItem(id: number, item: { name: string, description?: string }) {
-	const response = await api.put<Item>(`/items/${id}`, item);
+export async function updateItem(id: number, item: { name: string, description?: string; imageUrl?: string; imageFile?: File }) {
+	const formData = new FormData();
+	formData.append('name', item.name);
+	if (item.description) formData.append('description', item.description);
+	if (item.imageUrl) formData.append('imageUrl', item.imageUrl);
+	if (item.imageFile) formData.append('image', item.imageFile);
+
+	const response = await api.put<Item>(`/items/${id}`, formData, {
+		headers: {
+			'Content-Type': 'multipart/form-data',
+		},
+	});
 	return response.data;
 }
 

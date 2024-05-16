@@ -26,16 +26,20 @@ export function ItemHistoryComponent({ itemId }: ItemHistoryProps) {
 	return (
 		<div>
 			<h2 className="text-xl font-bold mb-2">Item History</h2>
-			<ul>
-				{history.map(record => (
-					<li key={record.id} className="border p-2 mb-2">
-						<p>{record.change}</p>
-						<p className="text-sm text-gray-600">
-							{new Date(record.changedAt).toLocaleString()}
-						</p>
-					</li>
-				))}
-			</ul>
+			{history.length == 0 ? (
+				<div>Not found</div>
+			) : (
+				<ul>
+					{history.map(record => (
+						<li key={record.id} className="border p-2 mb-2">
+							<p>{record.change}</p>
+							<p className="text-sm text-gray-600">
+								{new Date(record.changedAt).toLocaleString()}
+							</p>
+						</li>
+					))}
+				</ul>
+			)}
 		</div>
 	);
 }
