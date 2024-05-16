@@ -11,7 +11,10 @@ No good practices, no clean code, but just works. Let's see! Gonna use Nextjs, E
 - [x] 2h - Frontend basic functionality
 - [x] 1h - First deploy
 - [x] 1h - Add nginx
+- [x] 2h - Refine Fron-end
 - [ ] ?h - Auth Frontend / backend
+
+TOTAL TIME SPENT: 8h
 
 ## Resources
 
