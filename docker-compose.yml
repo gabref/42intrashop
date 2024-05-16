@@ -23,6 +23,8 @@ services:
       - 4000:4000
     environment:
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres?schema=public
+    depends_on:
+      - db
 
   db:
     container_name: db
@@ -46,6 +48,17 @@ services:
       - ./front/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - front
+
+  seed:
+    container_name: seed
+    build:
+      context: ./seed
+      dockerfile: seed.dockerfile
+    depends_on:
+      - back
+      - db
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres?schema=public
 
 volumes:
   pgdata: {}

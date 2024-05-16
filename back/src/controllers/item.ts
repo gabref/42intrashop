@@ -52,6 +52,14 @@ export async function addItem(req: Request, res: Response) {
 		const item = await prisma.item.create({
 			data: itemData,
 		});
+
+		await prisma.itemHistory.create({
+			data: {
+				itemId: item.id,
+				change: `Item ${item.name} created`,
+			}
+		});
+
 		res.status(201).json(item);
 	} catch (error) {
 		res.status(400).json({ error: error });

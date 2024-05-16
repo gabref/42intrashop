@@ -2,6 +2,7 @@ import express from 'express';
 import { router as itemRouter } from './routes/item'
 import { router as userRouter } from './routes/user'
 import { router as statusRouter } from './routes/status'
+import { router as homeRouter } from './routes/home'
 
 const app = express();
 
@@ -18,5 +19,6 @@ app.use((_req, res, next) => {
 app.use('/api/items', itemRouter);
 app.use('/api/users', userRouter);
 app.use('/api', statusRouter);
+app.use('/', homeRouter);
 
 export default app;
