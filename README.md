@@ -4,6 +4,19 @@
 Following the 42 subject, it is a simple CRUD app while we don't get the actual real subject, so as a game, how long does it take me to create a simple fullstack app with auth that acthsuallly works?
 No good practices, no clean code, but just works. Let's see! Gonna use Nextjs, Express.js and postgres.
 
+## Run the project
+
+### Requirements
+You need to have docker installed
+
+To run the project run the following in your terminal:
+```bash
+git clone https://github.com/gabref/42intrashop.git
+make
+```
+
+Then go to (localhost)[http://localhost]
+
 ## Stopwatch of development
 
 - [x] 1h - Initial Setup
